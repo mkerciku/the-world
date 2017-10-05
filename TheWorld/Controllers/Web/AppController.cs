@@ -4,15 +4,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TheWorld.Models;
 using TheWorld.ViewModels;
 
 namespace TheWorld.Controllers.Web
 {
     public class AppController : Controller
     {
+        private WorldContext _context;
+
+        public AppController(WorldContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
-            return View();
+
+            var data = _context.Trips.ToList();
+            return View(data);
         }
 
         public IActionResult Contact()
