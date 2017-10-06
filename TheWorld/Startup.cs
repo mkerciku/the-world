@@ -38,17 +38,27 @@ namespace TheWorld
 
             services.AddMvc();
 
+            services.AddScoped<IWorldRepository, WorldRepository>();
+
             services.AddDbContext<WorldContext>();
 
             services.AddTransient<WorldContextSeedData>();
+
+            services.AddLogging();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, WorldContextSeedData seeder)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, WorldContextSeedData seeder, ILoggerFactory factory)
         {
             if (env.IsDevelopment())
             {
             app.UseDeveloperExceptionPage();
+                factory.AddDebug(LogLevel.Information);
+
+            }
+            else
+            {
+                factory.AddDebug(LogLevel.Error);
 
             }
 

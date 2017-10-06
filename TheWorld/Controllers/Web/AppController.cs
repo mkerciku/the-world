@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,18 +12,29 @@ namespace TheWorld.Controllers.Web
 {
     public class AppController : Controller
     {
-        private WorldContext _context;
+        private IWorldRepository _repository;
+        private ILogger<AppController> _logger;
 
-        public AppController(WorldContext context)
+        public AppController(IWorldRepository repository,ILogger<AppController> logger )
         {
-            _context = context;
+            _repository = repository;
+            _logger = logger;
         }
 
         public IActionResult Index()
         {
+            try
+            {
+                var data = _repository.GetAllTrips();
+                return View(data);
+            }
+            catch (Exception ex)
+            {
 
-            var data = _context.Trips.ToList();
-            return View(data);
+                _logger.LogError($"Failed to get trips in Index Page: {ex.Message}");
+                return Redirect("/error");
+            }
+            
         }
 
         public IActionResult Contact()
