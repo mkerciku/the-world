@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using TheWorld.Models;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json.Serialization;
 
 namespace TheWorld
 {
@@ -36,7 +37,12 @@ namespace TheWorld
         {
             services.AddSingleton(_config);
 
-            services.AddMvc();
+            services.AddMvc()
+                .AddJsonOptions(config =>
+                {
+                    config.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                }
+                );
 
             services.AddScoped<IWorldRepository, WorldRepository>();
 
