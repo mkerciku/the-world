@@ -10,6 +10,8 @@ using Microsoft.Extensions.Logging;
 using TheWorld.Models;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Serialization;
+using AutoMapper;
+using TheWorld.ViewModels;
 
 namespace TheWorld
 {
@@ -56,6 +58,14 @@ namespace TheWorld
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, WorldContextSeedData seeder, ILoggerFactory factory)
         {
+
+            Mapper.Initialize(config =>
+            {
+                config.CreateMap<TripViewModel, Trip>().ReverseMap();
+                
+            });
+
+
             if (env.IsDevelopment())
             {
             app.UseDeveloperExceptionPage();
