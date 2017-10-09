@@ -11,6 +11,8 @@ namespace TheWorld.Models
 
          Task<bool> SaveChangesAsync();
 
+        Trip GetTripByName(string tripName);
+
 
     }
 }
