@@ -19,6 +19,18 @@ namespace TheWorld.Models
             _logger = logger;
         }
 
+        //added now
+        public void AddStop(string tripName, Stop newStop)
+        {
+            var trip = GetTripByName(tripName);
+
+            if (trip!=null)
+            {
+                trip.Stops.Add(newStop);
+                _context.Stops.Add(newStop);
+            }
+        }
+
         public void AddTrip(Trip trip)
         {
             _context.Add(trip);
