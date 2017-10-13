@@ -14,9 +14,9 @@ namespace TheWorld.Services
     public class GeoCoordsService
     {
         private ILogger<GeoCoordsService> _logger;
-        private IConfiguration _config;
+        private IConfigurationRoot _config;
 
-        public GeoCoordsService(ILogger<GeoCoordsService> logger, IConfiguration config)
+        public GeoCoordsService(ILogger<GeoCoordsService> logger, IConfigurationRoot config)
         {
             _logger = logger;
             _config = config;
@@ -41,7 +41,7 @@ namespace TheWorld.Services
             //read out the result
             //fragile, might neet to change  if the bing api change
             var results = JObject.Parse(json);
-            var resources = results["resourcesSets"][0]["resources"];
+            var resources = results["resourceSets"][0]["resources"];
 
             if (!results["resourceSets"][0]["resources"].HasValues)
             {
@@ -57,9 +57,16 @@ namespace TheWorld.Services
                 else
                 {
                     var coords = resources[0]["geocodePoints"][0]["coordinates"];
+                    result.Latitude = (double)coords[0];
+                    result.Longtitude = (double)coords[1];
+
+                    result.Success = true;
+                    result.Message = "SUccess";
 
                 }
             }
+
+            return result;
         }
     }
 }

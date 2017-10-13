@@ -3,6 +3,6 @@
     "WorldContextConnection": "Server=(localdb)\\ProjectsV13;Database=TheWorldDb;Trusted_Connection=true;MultipleActiveResultSets=true;"
   },
   "Keys": {
-    "BingKey": "dont ever put keys in source control"
+    "BingKey": "donteverputkeysinsourcecontrol"
   }
 }

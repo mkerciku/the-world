@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -23,19 +24,28 @@ namespace TheWorld.Controllers.Web
 
         public IActionResult Index()
         {
+           
+                return View();
+        }
+
+        [Authorize]
+        public IActionResult Trips()
+        {
             try
             {
-                var data = _repository.GetAllTrips();
-                return View(data);
+                var trips = _repository.GetAllTrips();
+
+                return View(trips);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                _logger.LogError($"Failed to get trips in Index Page: {ex.Message}");
+                _logger.LogError($"Failed to get trips in Index page");
                 return Redirect("/error");
             }
             
         }
+
 
         public IActionResult Contact()
         {
