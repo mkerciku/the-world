@@ -28,7 +28,7 @@ namespace TheWorld.Models
                     Email = "mariokerciku91@gmail.com"
                 };
 
-                await _userManager.CreateAsync(user, "P@ssw0rd!");
+                await _userManager.CreateAsync(user, "Deloitte21!");
             }
 
 

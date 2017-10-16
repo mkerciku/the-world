@@ -2,8 +2,39 @@
 @{ 
     ViewBag.Title = "Homepage";
 }
+@section Scripts{ 
+    <script src="~/lib/angular/angular.min.js"></script>
+    <script src="~/js/app-trip.js"></script>
+    <script src="~/js/tripsController.js"></script>
+}
+<div class="row" ng-app="app-trips">
 
-<div class="row">
+
+    <div ng-controller="tripsController as vm" class=" col-md-6 col-md-offset-3" >
+       <table class="table table-responsive table-striped" >
+           <tr ng-repeat="trip in vm.trips">
+               <td>{{trip.name}}</td>
+               <td>{{trip.created | date}}</td> @*date here is a filter to control how to display data.*@
+               <td><a href="#" class="btn btn-sm btn-primary">Manage</a></td>
+           </tr>
+       </table>
+
+        <form novalidate name="newTripForm" ng-submit="vm.addTrip()">
+            <div class="form-group">
+                <label for="name">Trips Name</label>
+                <input class="form-control" type="text" id="name" name="name" ng-model="vm.newTrip.name" required ng-minlength="5"/>
+                <span ng-show="newTripForm.name.$error.required" class="text-warning">Name is required.</span>
+                <span ng-show="newTripForm.name.$error.minlength" class="text-warning">Name must at least 5 characters.</span>
+
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-success btn-sm" ng-disabled="newTripForm.$invalid"/>
+            </div>
+
+        </form>
+    </div>
+
     <div class="col-md-6 ">
         <h1>The World</h1>
 
