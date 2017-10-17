@@ -1,65 +1,52 @@
-﻿@model IEnumerable<TheWorld.Models.Trip>
-@{ 
-    ViewBag.Title = "Homepage";
+@model IEnumerable<TheWorld.Models.Trip>
+@{
+  ViewBag.Title = "Home Page";
 }
-@section Scripts{ 
-    <script src="~/lib/angular/angular.min.js"></script>
-    <script src="~/js/app-trip.js"></script>
-    <script src="~/js/tripsController.js"></script>
+@section Scripts {
+  <script src="~/lib/angular/angular.js"></script>
+  <script src="~/js/simpleControls.js"></script>
+  <script src="~/js/app-trips.js"></script>
+  <script src="~/js/tripsController.js"></script>
 }
 <div class="row" ng-app="app-trips">
 
+  <div ng-controller="tripsController as vm" class="col-md-6 col-md-offset-3">
+    <div class="text-danger" ng-show="vm.errorMessage">{{ vm.errorMessage }}</div>
+    <wait-cursor display-when="vm.isBusy"></wait-cursor>
+    <table class="table table-responsive table-striped">
+      <tr ng-repeat="trip in vm.trips">
+        <td>{{ trip.name }}</td>
+        <td>{{ trip.created | date:'MM-dd-yyyy' }}</td>
+        <td><a href="#" class="btn btn-sm btn-primary">Manage</a></td>
+      </tr>
+    </table>
 
-    <div ng-controller="tripsController as vm" class=" col-md-6 col-md-offset-3" >
-       <table class="table table-responsive table-striped" >
-           <tr ng-repeat="trip in vm.trips">
-               <td>{{trip.name}}</td>
-               <td>{{trip.created | date}}</td> @*date here is a filter to control how to display data.*@
-               <td><a href="#" class="btn btn-sm btn-primary">Manage</a></td>
-           </tr>
-       </table>
+    <form novalidate name="newTripForm" ng-submit="vm.addTrip()">
+      <div class="form-group">
+        <label for="name">Trip Name</label>
+        <input class="form-control" type="text" id="name" name="name" ng-model="vm.newTrip.name" required ng-minlength="5" />
+        <span ng-show="newTripForm.name.$error.required" class="text-warning">Name is required.</span>
+        <span ng-show="newTripForm.name.$error.minlength" class="text-warning">Name must be at least five characters.</span>
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Add"
+               class="btn btn-success btn-sm"
+               ng-disabled="newTripForm.$invalid" />
+      </div>
+    </form>
 
-        <form novalidate name="newTripForm" ng-submit="vm.addTrip()">
-            <div class="form-group">
-                <label for="name">Trips Name</label>
-                <input class="form-control" type="text" id="name" name="name" ng-model="vm.newTrip.name" required ng-minlength="5"/>
-                <span ng-show="newTripForm.name.$error.required" class="text-warning">Name is required.</span>
-                <span ng-show="newTripForm.name.$error.minlength" class="text-warning">Name must at least 5 characters.</span>
+  </div>
 
-            </div>
+  <div class="col-md-6">
+    <h2>The Map</h2>
 
-            <div class="form-group">
-                <input type="submit" value="Add" class="btn btn-success btn-sm" ng-disabled="newTripForm.$invalid"/>
-            </div>
+    <ul>
+      @foreach (var item in Model)
+      {
+        <li>@item.Name : @item.DateCreated.ToString("d")</li>
+      }
+    </ul>
 
-        </form>
-    </div>
+  </div>
 
-    <div class="col-md-6 ">
-        <h1>The World</h1>
-
-        <form>
-            <div class="form-group">
-                <label>Date</label>
-                <input class="form-control"/>
-            </div>
-            <div class="form-group">
-                <label>Location</label>
-                <input class="form-control" />
-            </div>
-            <div>
-                <input type="submit" value="Add" class="btn btn-success" />
-            </div>
-        </form>        
-    </div>
-    <div class="col-md-6 ">
-        <h2>The Map</h2>
-
-        <ul>
-            @foreach (var item in Model)
-            {
-                <li>@item.Name : @item.DateCreated.ToString("d")</li>
-            }
-        </ul>
-    </div>
 </div>

@@ -1,8 +1,11 @@
 {
+  "MailSettings": {
+    "ToAddress": "shawn@wildermuth.com"
+  },
   "ConnectionStrings": {
     "WorldContextConnection": "Server=(localdb)\\ProjectsV13;Database=TheWorldDb;Trusted_Connection=true;MultipleActiveResultSets=true;"
   },
   "Keys": {
-    "BingKey": "donteverputkeysinsourcecontrol"
+    "BingKey": "DONTEVERPUTKEYSINSOURCECONTROL"
   }
 }

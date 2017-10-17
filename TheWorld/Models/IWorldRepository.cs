@@ -3,19 +3,15 @@ using System.Threading.Tasks;
 
 namespace TheWorld.Models
 {
-    public interface IWorldRepository
-    {
-        IEnumerable<Trip> GetAllTrips();
-        IEnumerable<Trip> GetTripsByUsername(string username);
+  public interface IWorldRepository
+  {
+    IEnumerable<Trip> GetAllTrips();
+    Trip GetTripByName(string tripName, string username);
 
-        void AddTrip(Trip trip);
-        void AddStop(string tripName, Stop newStop,string username);//added now
+    void AddTrip(Trip trip);
+    void AddStop(string tripName, string username, Stop newStop);
 
-        Task<bool> SaveChangesAsync();
-
-        Trip GetTripByName(string tripName);
-        Trip GetUserTripByName(string tripName, string username);
-
-
-    }
+    Task<bool> SaveChangesAsync();
+    object GetTripsByUsername(string name);
+  }
 }

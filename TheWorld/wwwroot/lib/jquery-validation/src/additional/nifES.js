@@ -1,12 +1,8 @@
 /*
  * The Número de Identificación Fiscal ( NIF ) is the way tax identification used in Spain for individuals
  */
-$.validator.addMethod( "nifES", function( value, element ) {
+$.validator.addMethod( "nifES", function( value ) {
 	"use strict";
-
-	if ( this.optional( element ) ) {
-		return true;
-	}
 
 	value = value.toUpperCase();
 
@@ -22,7 +18,7 @@ $.validator.addMethod( "nifES", function( value, element ) {
 
 	// Test specials NIF (starts with K, L or M)
 	if ( /^[KLM]{1}/.test( value ) ) {
-		return ( value[ 8 ] === "TRWAGMYFPDXBNJZSQVHLCKE".charAt( value.substring( 8, 1 ) % 23 ) );
+		return ( value[ 8 ] === String.fromCharCode( 64 ) );
 	}
 
 	return false;

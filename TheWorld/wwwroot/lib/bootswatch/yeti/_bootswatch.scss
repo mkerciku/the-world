@@ -1,9 +1,8 @@
-// Yeti 3.3.7
+// Yeti 3.3.5
 // Bootswatch
 // -----------------------------------------------------
 
-$web-font-path: "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700" !default;
-@import url($web-font-path);
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700");
 
 // Navbar =====================================================================
 
@@ -34,11 +33,6 @@ $web-font-path: "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400
       height: auto;
       padding: $padding-xs-vertical $padding-xs-horizontal;
     }
-  }
-
-  &-text {
-    margin: 12px 15px;
-    line-height: 21px;
   }
 
   .dropdown {
@@ -323,14 +317,12 @@ input[type="checkbox"] {
     }
   }
 
-  &-lg > li > a,
-  &-lg > li > span {
+  &-lg > li > a {
     padding-left: 22px;
     padding-right: 22px;
   }
 
-  &-sm > li > a,
-  &-sm > li > span {
+  &-sm > li > a {
     padding: 0 5px;
   }
 }

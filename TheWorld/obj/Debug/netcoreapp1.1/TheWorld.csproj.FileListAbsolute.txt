@@ -1,13 +1,13 @@
-C:\Users\Mariglen Kerciku\source\repos\TheWorld\TheWorld\bin\Debug\netcoreapp1.1\TheWorld.deps.json
-C:\Users\Mariglen Kerciku\source\repos\TheWorld\TheWorld\bin\Debug\netcoreapp1.1\TheWorld.runtimeconfig.json
-C:\Users\Mariglen Kerciku\source\repos\TheWorld\TheWorld\bin\Debug\netcoreapp1.1\TheWorld.runtimeconfig.dev.json
-C:\Users\Mariglen Kerciku\source\repos\TheWorld\TheWorld\bin\Debug\netcoreapp1.1\TheWorld.dll
-C:\Users\Mariglen Kerciku\source\repos\TheWorld\TheWorld\bin\Debug\netcoreapp1.1\TheWorld.pdb
-C:\Users\Mariglen Kerciku\source\repos\TheWorld\TheWorld\obj\Debug\netcoreapp1.1\TheWorld.csprojResolveAssemblyReference.cache
-C:\Users\Mariglen Kerciku\source\repos\TheWorld\TheWorld\obj\Debug\netcoreapp1.1\TheWorld.csproj.CoreCompileInputs.cache
-C:\Users\Mariglen Kerciku\source\repos\TheWorld\TheWorld\obj\Debug\netcoreapp1.1\TheWorld.AssemblyInfo.cs
-C:\Users\Mariglen Kerciku\source\repos\TheWorld\TheWorld\obj\Debug\netcoreapp1.1\TheWorld.dll
-C:\Users\Mariglen Kerciku\source\repos\TheWorld\TheWorld\obj\Debug\netcoreapp1.1\TheWorld.pdb
+C:\Users\Mariglen Kerciku\Documents\.NET Projects\TheWorldOrig\TheWorld\bin\Debug\netcoreapp1.1\TheWorld.deps.json
+C:\Users\Mariglen Kerciku\Documents\.NET Projects\TheWorldOrig\TheWorld\bin\Debug\netcoreapp1.1\TheWorld.runtimeconfig.json
+C:\Users\Mariglen Kerciku\Documents\.NET Projects\TheWorldOrig\TheWorld\bin\Debug\netcoreapp1.1\TheWorld.runtimeconfig.dev.json
+C:\Users\Mariglen Kerciku\Documents\.NET Projects\TheWorldOrig\TheWorld\bin\Debug\netcoreapp1.1\TheWorld.dll
+C:\Users\Mariglen Kerciku\Documents\.NET Projects\TheWorldOrig\TheWorld\bin\Debug\netcoreapp1.1\TheWorld.pdb
+C:\Users\Mariglen Kerciku\Documents\.NET Projects\TheWorldOrig\TheWorld\obj\Debug\netcoreapp1.1\TheWorld.csprojResolveAssemblyReference.cache
+C:\Users\Mariglen Kerciku\Documents\.NET Projects\TheWorldOrig\TheWorld\obj\Debug\netcoreapp1.1\TheWorld.csproj.CoreCompileInputs.cache
+C:\Users\Mariglen Kerciku\Documents\.NET Projects\TheWorldOrig\TheWorld\obj\Debug\netcoreapp1.1\TheWorld.AssemblyInfo.cs
+C:\Users\Mariglen Kerciku\Documents\.NET Projects\TheWorldOrig\TheWorld\obj\Debug\netcoreapp1.1\TheWorld.dll
+C:\Users\Mariglen Kerciku\Documents\.NET Projects\TheWorldOrig\TheWorld\obj\Debug\netcoreapp1.1\TheWorld.pdb
 C:\Users\Mariglen Kerciku\Documents\.NET Projects\the world project\TheWorld\bin\Debug\netcoreapp1.1\TheWorld.deps.json
 C:\Users\Mariglen Kerciku\Documents\.NET Projects\the world project\TheWorld\bin\Debug\netcoreapp1.1\TheWorld.runtimeconfig.json
 C:\Users\Mariglen Kerciku\Documents\.NET Projects\the world project\TheWorld\bin\Debug\netcoreapp1.1\TheWorld.runtimeconfig.dev.json
